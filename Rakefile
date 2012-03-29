@@ -3,7 +3,7 @@ require 'rake'
 require 'echoe'
 
 Echoe.new('loginradius', '0.1.0') do |p|
-  p.description     = "Enable token authentication against loginradius.com"
+  p.description     = "Enables token authentication against loginradius.com"
   p.url             = "http://github.com/sicruse/loginradius"
   p.author          = "Si Cruse"
   p.email           = "si@mindcultivator.com"
