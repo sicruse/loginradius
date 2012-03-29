@@ -1,0 +1,22 @@
+= LoginRadius
+
+Rails gem which enables token authentication against loginradius.com
+
+== Example usage
+
+class SessionsController < ApplicationController
+  protect_from_forgery :except => :callback
+
+  def callback
+    logger.debug "received LoginRadius callback!"
+
+    # Initialize the LoginRadius session - API key 
+    loginradius = LoginRadius::LoginRadiusSession.new "INSERT YOUR KEY HERE"
+
+    # Authenticate the LoginRadius session vs. the token being passed to our app
+    if loginradius.authenticate_token? params[:token], params[:lrid]
+      logger.debug "successfully authenticated LoginRadius"
+      logger.debug loginradius.data
+
+      # Now need to create user record or login user
+	  ...
