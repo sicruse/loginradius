@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('loginradius', '0.1.0') do |p|
+Echoe.new('loginradius', '0.1.1') do |p|
   p.description     = "Enables token authentication against loginradius.com"
   p.url             = "http://github.com/sicruse/loginradius"
   p.author          = "Si Cruse"
