@@ -14,7 +14,7 @@ Rails gem which enables token authentication against loginradius.com
         loginradius = LoginRadius::LoginRadiusSession.new "INSERT YOUR KEY HERE"
         
         # Authenticate the LoginRadius session vs. the token being passed to our app
-        if loginradius.authenticate_token? params[:token], params[:lrid]
+        if loginradius.is_authentic_token? params[:token], params[:lrid]
           logger.debug "successfully authenticated LoginRadius"
           logger.debug loginradius.data
           
