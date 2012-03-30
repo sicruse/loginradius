@@ -30,7 +30,7 @@ module LoginRadius
       @data = ""
     end
     
-    def authenticate_token?(token, id)
+    def is_authentic_token?(token, id)
       @data = api_call 'userprofile', :token => token
       result = (@data['ID'].to_s == id.to_s)
     end
