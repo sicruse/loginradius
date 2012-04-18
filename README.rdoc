@@ -1,6 +1,31 @@
 = LoginRadius
 
-Rails gem which enables token authentication against loginradius.com
+Rails gem which enables token authentication against loginradius.com[http://www.loginradius.com]
+
+== What is LoginRadius? (from loginradius.com[https://www.loginradius.com/loginradius/])
+To give your business a boost on the web, we at LoginRadius came up with a different approach to the login process. Using LoginRadius, you can easily integrate social login on your website and allow users to register with their existing accounts on Facebook, Google, Yahoo, Twitter, and over 20 more providers. Eliminating the annoying registration process will not only attract more traffic to your website but also boost your user base. All ID providers are integrated to your website via LoginRadius, users can connect to ID providers through the channel provided by LoginRadius without ever navigating away from your website.
+
+== Its simple to use
+Please review the loginradius website to build an understanding of how to:
+1. register for an account
+2. integrate the signin form with your markup
+
+Once you have integrated the signin form you will need to be able to process "callbacks" from the loginradius system. The callback happens after a user authenticates, via their chosen method, whereupon an authentication token is passed to your application as a parameter over a route of your specification. e.g.
+
+Perhaps you might specify "http://myapp.mydomain.com/callback" as the method to contact your application. In order to service the callback you will need to:
+1. create a controller action and an appropriate entry in your config/routes.rb file
+2. in the controller action validate the callback is authentic
+
+The purpose of the loginradius gem is to support the validation of the callback through a simple helper class, LoginRadiusSession.
+
+== Install it as a Gem
+loginradius is  available as a Ruby gem. 
+
+    $ [sudo] gem install loginradius
+
+The loginradius source is available at GitHub:
+
+    $ git clone git://github.com/sicruse/loginradius.git
 
 == Example usage
 
